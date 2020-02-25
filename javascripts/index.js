@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://hero-s-journey-spread-api.herokuapp.com/';
 const GET_CARD = `${BASE_URL}/cards`;
 const RANDOM_CARD = `${GET_CARD}/random/1`;
 const RANDOM_THREE = `${GET_CARD}/random/3`;
