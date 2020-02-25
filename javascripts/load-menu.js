@@ -51,7 +51,7 @@ const getActiveMenuItems = function() {
         fetch(`${GET_CARD}/${item.points[0].cards[0].id}`)
         .then(resp => resp.json())
         .then(obj => {
-          item.node.querySelector('img').src = (obj.card_type === 'major' ? `assets/card-images/major/${obj.value}.jpg` : `assets/card-images/minor/${loadUtility.capitalized(obj.suit)}/${obj.value}.jpg`);
+          item.node.querySelector('img').src = (obj.card_type === 'major' ? `${CARD_IMG}/major/${obj.value}.jpg` : `${CARD_IMG}/minor/${loadUtility.capitalized(obj.suit)}/${obj.value}.jpg`);
         })
         if (item.points[0].querent_ref.split(", ")[1].split(" ")[1] === "inverted") {
           item.node.querySelector('img').classList.add('inverted-card')
@@ -68,7 +68,7 @@ const getActiveMenuItems = function() {
     };
     cardsContainer.appendChild(loadElement.makeCard(configObj));
     const lastImageContainer = cardsContainer.querySelector('.load-menu.menu-card:last-child .img-container');
-    lastImageContainer.querySelector('img').src = 'assets/card-images/x-small.jpg';
+    lastImageContainer.querySelector('img').src = `${CARD_IMG}/x-small.jpg`;
     lastImageContainer.appendChild(loadElement.makePlusOverlay());
     lastImageContainer.addEventListener('click', () => {
       if (activeLoadMenuType==='journey') {

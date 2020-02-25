@@ -304,14 +304,14 @@ const pointsMenuElements = (function() {
     makeImage: function(configObj) {
       const cardImage = document.createElement('img');
       if (!configObj.drawn) {
-        cardImage.src = 'assets/card-images/x.jpg';
+        cardImage.src = `${CARD_IMG}/x.jpg`;
         cardImage.alt = 'card-back';
         cardImage.className = 'draw-card';
       } else {
         if (configObj.card_type === 'major') {
-          cardImage.src = `assets/card-images/major/${configObj.value}.jpg`;
+          cardImage.src = `${CARD_IMG}/major/${configObj.value}.jpg`;
         } else {
-          cardImage.src = `assets/card-images/minor/${loadUtility.capitalized.call(configObj.suit)}/${configObj.value}.jpg`;
+          cardImage.src = `${CARD_IMG}/minor/${loadUtility.capitalized.call(configObj.suit)}/${configObj.value}.jpg`;
         }
         cardImage.alt = `${configObj.name}`;
         cardImage.className = 'drawn-card';
