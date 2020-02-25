@@ -311,7 +311,7 @@ const pointsMenuElements = (function() {
         if (configObj.card_type === 'major') {
           cardImage.src = `assets/card-images/major/${configObj.value}.jpg`;
         } else {
-          cardImage.src = `assets/card-images/minor/${loadUtility.capitalized(configObj.suit)}/${configObj.value}.jpg`;
+          cardImage.src = `assets/card-images/minor/${loadUtility.capitalized.call(configObj.suit)}/${configObj.value}.jpg`;
         }
         cardImage.alt = `${configObj.name}`;
         cardImage.className = 'drawn-card';
