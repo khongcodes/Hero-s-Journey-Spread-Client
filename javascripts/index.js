@@ -6,7 +6,6 @@ const CHARACTERS = `${BASE_URL}/characters`
 const JOURNEYS = `${BASE_URL}/journeys`
 const POINTS = `${BASE_URL}/points`
 
-
 let modalActive = false;
 let activeLoadMenuType = 'character';
 const pointsModal = document.querySelector('div#modal');

@@ -46,7 +46,7 @@ const getActiveMenuItems = function() {
     for (const item of sortedItems) {
       cardsContainer.appendChild(item.node);
       if (item.points.length === 0) {
-        item.node.querySelector('img').src = 'assets/card-images/x.jpg';
+        item.node.querySelector('img').src = `${CARD_IMG}/x.jpg`;
       } else {
         fetch(`${GET_CARD}/${item.points[0].cards[0].id}`)
         .then(resp => resp.json())
