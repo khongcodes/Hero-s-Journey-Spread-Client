@@ -51,7 +51,7 @@ const getActiveMenuItems = function() {
         fetch(`${GET_CARD}/${item.points[0].cards[0].id}`)
         .then(resp => resp.json())
         .then(obj => {
-          item.node.querySelector('img').src = (obj.card_type === 'major' ? `${CARD_IMG}/major/${obj.value}.jpg` : `${CARD_IMG}/minor/${loadUtility.capitalized(obj.suit)}/${obj.value}.jpg`);
+          item.node.querySelector('img').src = (obj.card_type === 'major' ? `${CARD_IMG}/major/${obj.value}.jpg` : `${CARD_IMG}/minor/${loadUtility.capitalized.call(obj.suit)}/${obj.value}.jpg`);
         })
         if (item.points[0].querent_ref.split(", ")[1].split(" ")[1] === "inverted") {
           item.node.querySelector('img').classList.add('inverted-card')
